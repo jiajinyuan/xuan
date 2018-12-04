@@ -1,0 +1,36 @@
+package com.jf.course.api.test;
+
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.jf.course.api.model.BasicEntity;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+import javax.persistence.Column;
+import javax.persistence.Table;
+
+import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.NONE;
+
+/**
+ * <p>Description: TestCommEntity.</p>
+ * <p>Copyright: Copyright(c) 2020.</p>
+ * <p>Company: Sefonsoft.</p>
+ * <p>CreateTime: 2018/12/3.</p>
+ *
+ * @author Junfeng
+ * @version 1.0
+ */
+@EqualsAndHashCode(callSuper = true)
+@Data
+@Table(name = "T_TEST")
+@JsonAutoDetect(creatorVisibility = NONE, fieldVisibility = NONE, getterVisibility = NONE, setterVisibility = NONE, isGetterVisibility = NONE)
+class TestCommEntity extends BasicEntity {
+
+    /**
+     * 库名
+     */
+    @Column(name = "NAME")
+    @JsonProperty("name")
+    private String name;
+
+}
