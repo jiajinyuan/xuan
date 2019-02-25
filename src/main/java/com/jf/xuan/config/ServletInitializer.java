@@ -1,6 +1,6 @@
-package com.jf.course.config;
+package com.jf.xuan.config;
 
-import com.jf.course.CourseApplication;
+import com.jf.xuan.XuanApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
@@ -16,7 +16,7 @@ public class ServletInitializer extends SpringBootServletInitializer {
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(CourseApplication.class);
+        return application.sources(XuanApplication.class);
     }
 
 }

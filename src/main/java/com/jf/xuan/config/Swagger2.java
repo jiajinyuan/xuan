@@ -1,4 +1,4 @@
-package com.jf.course.config;
+package com.jf.xuan.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -30,14 +30,14 @@ public class Swagger2 {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.jf.course.api"))
+                .apis(RequestHandlerSelectors.basePackage("com.jf.xuan.api"))
                 .paths(PathSelectors.any())
                 .build();
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("Course api definition information")
+                .title("Xuan api definition information")
                 .description("")
                 .termsOfServiceUrl("")
                 .contact(new Contact("JunFeng", "http://www.baidu.com", "xx@163.com"))

@@ -1,4 +1,4 @@
-package com.jf.course.encrypt;
+package com.jf.xuan.encrypt;
 
 import org.jasypt.encryption.StringEncryptor;
 import org.junit.Test;
@@ -16,7 +16,6 @@ import org.springframework.test.context.junit4.SpringRunner;
  * @author Junfeng
  * @version 1.0
  */
-
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class EncryptPasswordUtil {
@@ -26,9 +25,12 @@ public class EncryptPasswordUtil {
 
     @Test
     public void encryptPwd() {
-        String result = stringEncryptor.encrypt("Sevp18x!");
+        String result = stringEncryptor.encrypt("cdsf119!");
         System.out.println("====================================================");
         System.out.println("Ciphertext: " + result);
         System.out.println("====================================================");
     }
+
+    // 加密 使用命令：
+    // java -cp jasypt-1.9.2.jar org.jasypt.intf.cli.JasyptPBEStringEncryptionCLI input="cdsf119" password=xuan_salt algorithm=PBEWithMD5AndDES
 }

@@ -1,4 +1,4 @@
-package com.jf.course;
+package com.jf.xuan;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,11 +14,11 @@ import tk.mybatis.spring.annotation.MapperScan;
  * @author Junfeng
  */
 @SpringBootApplication
-@MapperScan("com.jf.course.api")
+@MapperScan("com.jf.xuan.api")
 @EnableCaching
-public class CourseApplication {
+public class XuanApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CourseApplication.class, args);
+        SpringApplication.run(XuanApplication.class, args);
     }
 }

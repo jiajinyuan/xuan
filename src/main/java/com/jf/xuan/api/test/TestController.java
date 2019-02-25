@@ -1,6 +1,6 @@
-package com.jf.course.api.test;
+package com.jf.xuan.api.test;
 
-import com.jf.course.api.common.ServiceResult;
+import com.jf.xuan.api.common.ServiceResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;

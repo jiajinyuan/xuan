@@ -1,6 +1,6 @@
-package com.jf.course.common;
+package com.jf.xuan.common;
 
-import com.jf.course.api.model.BasicEntity;
+import com.jf.xuan.api.model.BasicEntity;
 import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.common.MySqlMapper;
 

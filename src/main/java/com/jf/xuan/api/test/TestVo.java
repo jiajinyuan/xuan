@@ -1,4 +1,4 @@
-package com.jf.course.api.test;
+package com.jf.xuan.api.test;
 
 import io.swagger.annotations.ApiModel;
 import lombok.Data;

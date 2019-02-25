@@ -1,4 +1,4 @@
-package com.jf.course.api.common;
+package com.jf.xuan.api.common;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

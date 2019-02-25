@@ -1,4 +1,4 @@
-package com.jf.course.api.model;
+package com.jf.xuan.api.model;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonFormat;

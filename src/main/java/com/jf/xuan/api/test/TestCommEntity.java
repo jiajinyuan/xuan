@@ -1,8 +1,8 @@
-package com.jf.course.api.test;
+package com.jf.xuan.api.test;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.jf.course.api.model.BasicEntity;
+import com.jf.xuan.api.model.BasicEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

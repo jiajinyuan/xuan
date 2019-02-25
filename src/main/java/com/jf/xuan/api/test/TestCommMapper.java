@@ -1,6 +1,6 @@
-package com.jf.course.api.test;
+package com.jf.xuan.api.test;
 
-import com.jf.course.common.BasicMapper;
+import com.jf.xuan.common.BasicMapper;
 import org.springframework.stereotype.Repository;
 
 /**

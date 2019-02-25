@@ -1,4 +1,4 @@
-package com.jf.course.api.test;
+package com.jf.xuan.api.test;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;

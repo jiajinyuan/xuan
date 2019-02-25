@@ -20,7 +20,7 @@
 	<appender name="runFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 			<!--日志文件输出的文件名 -->
-			<FileNamePattern>${LOG_HOME}/run/sdc-dw-%d{yyyyMMdd}-%i.log</FileNamePattern>
+			<FileNamePattern>${LOG_HOME}/run/xuan-%d{yyyyMMdd}-%i.log</FileNamePattern>
 			<!-- 自动删除多少天前的日志文件 -->
 			<MaxHistory>90</MaxHistory>
 			<!--日志文件最大的大小 -->
@@ -44,7 +44,7 @@
 	<appender name="debugFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
 			<!--日志文件输出的文件名 -->
-			<FileNamePattern>${LOG_HOME}/debug/sdc-dw-%d{yyyyMMdd}-%i.log</FileNamePattern>
+			<FileNamePattern>${LOG_HOME}/debug/xuan-%d{yyyyMMdd}-%i.log</FileNamePattern>
 			<!-- 自动删除多少天前的日志文件 -->
 			<MaxHistory>90</MaxHistory>
 			<!--日志文件最大的大小 -->

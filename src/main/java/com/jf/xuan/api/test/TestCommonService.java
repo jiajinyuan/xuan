@@ -1,9 +1,9 @@
-package com.jf.course.api.test;
+package com.jf.xuan.api.test;
 
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
-import com.jf.course.api.common.PageResult;
-import com.jf.course.api.common.ServiceResult;
+import com.jf.xuan.api.common.PageResult;
+import com.jf.xuan.api.common.ServiceResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

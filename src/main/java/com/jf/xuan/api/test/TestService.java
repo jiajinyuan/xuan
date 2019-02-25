@@ -1,4 +1,4 @@
-package com.jf.course.api.test;
+package com.jf.xuan.api.test;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
