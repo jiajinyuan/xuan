@@ -1,6 +1,6 @@
 package com.jf.xuan.api.exception;
 
-import com.jf.xuan.common.I18nUtils;
+import com.jf.xuan.common.util.I18nUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

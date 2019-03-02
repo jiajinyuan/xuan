@@ -1,4 +1,4 @@
-package com.jf.xuan.common;
+package com.jf.xuan.common.util;
 
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
