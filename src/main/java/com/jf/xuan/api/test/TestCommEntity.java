@@ -3,6 +3,7 @@ package com.jf.xuan.api.test;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.jf.xuan.api.model.BasicEntity;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -20,9 +21,10 @@ import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.NONE;
  * @author Junfeng
  * @version 1.0
  */
-@EqualsAndHashCode(callSuper = true)
 @Data
+@Builder
 @Table(name = "T_TEST")
+@EqualsAndHashCode(callSuper = true)
 @JsonAutoDetect(creatorVisibility = NONE, fieldVisibility = NONE, getterVisibility = NONE, setterVisibility = NONE, isGetterVisibility = NONE)
 class TestCommEntity extends BasicEntity {
 
