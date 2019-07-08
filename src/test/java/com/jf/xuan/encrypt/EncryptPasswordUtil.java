@@ -30,6 +30,13 @@ public class EncryptPasswordUtil {
         System.out.println("Ciphertext: " + result);
         System.out.println("====================================================");
     }
+    @Test
+    public void decryptPwd(){
+        String result = stringEncryptor.decrypt("MO4SEDRla5BCKlRjMf9/Cg==");
+        System.out.println("====================================================");
+        System.out.println("Ciphertext: " + result);
+        System.out.println("====================================================");
+    }
 
     // 加密 使用命令：
     // java -cp jasypt-1.9.2.jar org.jasypt.intf.cli.JasyptPBEStringEncryptionCLI input="cdsf119" password=xuan_salt algorithm=PBEWithMD5AndDES

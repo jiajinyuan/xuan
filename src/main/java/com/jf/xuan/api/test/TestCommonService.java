@@ -3,7 +3,7 @@ package com.jf.xuan.api.test;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.jf.xuan.api.common.PageResult;
-import com.jf.xuan.api.common.ServiceResult;
+import com.jf.xuan.api.common.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,30 +15,30 @@ public class TestCommonService {
     @Autowired
     private TestCommMapper mapper;
 
-    public ServiceResult getCommonAll(TestCommEntity entity) {
+    public ResponseResult getCommonAll(TestCommEntity entity) {
 
         Page<Object> page = PageHelper.startPage(entity.getPage(), entity.getLimit());
         List<TestCommEntity> data = mapper.selectAll();
-        ServiceResult result = new ServiceResult(new PageResult<>(data, page.getTotal(), entity.getLimit()));
+        ResponseResult result = new ResponseResult(new PageResult<>(data, page.getTotal(), entity.getLimit()));
         return result;
     }
 
-    public ServiceResult get(Long id) {
-        return new ServiceResult(mapper.selectByPrimaryKey(id));
+    public ResponseResult get(Long id) {
+        return new ResponseResult(mapper.selectByPrimaryKey(id));
     }
 
-    public ServiceResult add(TestCommEntity entity) {
+    public ResponseResult add(TestCommEntity entity) {
         int i = mapper.insertSelective(entity);
-        return new ServiceResult(true, "", i);
+        return new ResponseResult(ResponseResult.TRUE, "", i);
     }
 
-    public ServiceResult update(TestCommEntity entity) {
+    public ResponseResult update(TestCommEntity entity) {
         int i = mapper.updateByPrimaryKeySelective(entity);
-        return new ServiceResult(true, "", i);
+        return new ResponseResult(ResponseResult.TRUE, "", i);
     }
 
-    public ServiceResult delete(Long id) {
+    public ResponseResult delete(Long id) {
         int i = mapper.deleteByPrimaryKey(id);
-        return new ServiceResult(true, "", i);
+        return new ResponseResult(ResponseResult.TRUE, "", i);
     }
 }

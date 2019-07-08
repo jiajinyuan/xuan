@@ -1,6 +1,6 @@
 package com.jf.xuan.api.test;
 
-import com.jf.xuan.api.common.ServiceResult;
+import com.jf.xuan.api.common.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
@@ -23,31 +23,31 @@ public class TestController {
     }
 
     @RequestMapping(value = "/getCommonAll", method = RequestMethod.GET)
-    public ServiceResult getCommonAll(TestCommEntity entity) {
+    public ResponseResult getCommonAll(TestCommEntity entity) {
         return commonService.getCommonAll(entity);
     }
 
     @Cacheable(value = "test", key = "#id")
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public ServiceResult get(@PathVariable Long id) {
+    public ResponseResult get(@PathVariable Long id) {
         return commonService.get(id);
     }
 
     @CachePut(value = "test", key = "#entity.id")
     @RequestMapping(value = "/", method = RequestMethod.POST)
-    public ServiceResult add(TestCommEntity entity) {
+    public ResponseResult add(TestCommEntity entity) {
         return commonService.add(entity);
     }
 
     @CachePut(value = "test", key = "#entity.id")
     @RequestMapping(value = "/", method = RequestMethod.PUT)
-    public ServiceResult update(TestCommEntity entity) {
+    public ResponseResult update(TestCommEntity entity) {
         return commonService.update(entity);
     }
 
     @CacheEvict(value = "test", key = "#id")
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public ServiceResult delete(@PathVariable Long id) {
+    public ResponseResult delete(@PathVariable Long id) {
         return commonService.delete(id);
     }
 

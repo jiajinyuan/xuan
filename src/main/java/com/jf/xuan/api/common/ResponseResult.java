@@ -18,12 +18,20 @@ import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.NONE;
 @Data
 @AllArgsConstructor
 @JsonAutoDetect(creatorVisibility = NONE, fieldVisibility = NONE, getterVisibility = NONE, setterVisibility = NONE, isGetterVisibility = NONE)
-public class ServiceResult {
+public class ResponseResult {
+    /**
+     * true
+     */
+    public static final Integer TRUE = 0;
+    /**
+     * false
+     */
+    public static final Integer FALSE = -1;
     /**
      * flag
      */
     @JsonProperty("result")
-    private boolean result;
+    private Integer result;
     /**
      * msg
      */
@@ -35,21 +43,21 @@ public class ServiceResult {
     @JsonProperty("data")
     private Object data;
 
-    public ServiceResult(boolean result) {
+    public ResponseResult(boolean result) {
         if (result) {
-            new ServiceResult(true, "SUCCESS");
+            new ResponseResult(TRUE, "SUCCESS");
         } else {
             throw new RuntimeException("Cannot use this constructor!");
         }
     }
 
-    public ServiceResult(Object data) {
-        this.result = true;
+    public ResponseResult(Object data) {
+        this.result = TRUE;
         this.msg = "success";
         this.data = data;
     }
 
-    public ServiceResult(boolean result, String msg) {
+    public ResponseResult(Integer result, String msg) {
         this.result = result;
         this.msg = msg;
     }
