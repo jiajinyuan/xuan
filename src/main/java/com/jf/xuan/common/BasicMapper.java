@@ -1,14 +1,11 @@
 package com.jf.xuan.common;
 
-import com.jf.xuan.api.model.BasicEntity;
+import com.jf.xuan.common.model.BasicEntity;
 import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.common.MySqlMapper;
 
 /**
- * <p>Description: 通用Mapper基础接口.</p>
- * <p>Copyright: Copyright(c) 2020.</p>
- * <p>Company: Sefonsoft.</p>
- * <p>CreateTime: 2018/12/3.</p>
+ * 通用Mapper基础接口
  *
  * @author Junfeng
  * @version 1.0

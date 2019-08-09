@@ -1,9 +1,8 @@
-package com.jf.xuan.api.common;
+package com.jf.xuan.common.model.common;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 
 import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.NONE;
 
@@ -16,22 +15,27 @@ import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.NONE;
  * @author Junfeng
  */
 @Data
+@Builder
 @AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode
+@ToString
 @JsonAutoDetect(creatorVisibility = NONE, fieldVisibility = NONE, getterVisibility = NONE, setterVisibility = NONE, isGetterVisibility = NONE)
 public class ResponseResult {
+
     /**
-     * true
+     * TRUE
      */
     public static final Integer TRUE = 0;
     /**
-     * false
+     * FALSE
      */
     public static final Integer FALSE = -1;
     /**
      * flag
      */
-    @JsonProperty("result")
-    private Integer result;
+    @JsonProperty("code")
+    private Integer code;
     /**
      * msg
      */
@@ -43,24 +47,14 @@ public class ResponseResult {
     @JsonProperty("data")
     private Object data;
 
-    public ResponseResult(boolean result) {
-        if (result) {
-            new ResponseResult(TRUE, "SUCCESS");
-        } else {
-            throw new RuntimeException("Cannot use this constructor!");
-        }
-    }
-
     public ResponseResult(Object data) {
-        this.result = TRUE;
-        this.msg = "success";
         this.data = data;
+        this.code = 0;
+        this.msg = "SUCCESS";
     }
 
-    public ResponseResult(Integer result, String msg) {
-        this.result = result;
+    public ResponseResult(Integer code, String msg) {
+        this.code = code;
         this.msg = msg;
     }
-
-
 }

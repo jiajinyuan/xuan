@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.jf.xuan.api.test.TestMapper">
+<mapper namespace="com.jf.xuan.api.demo.mapper.DemoMapper">
 
-    <select id="getCity" resultType="com.jf.xuan.api.test.TestVo">
+    <select id="getCity" resultType="com.jf.xuan.api.demo.model.DemoVo">
         SELECT ID, NAME FROM T_TEST
     </select>
 

@@ -17,6 +17,11 @@
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
+DROP DATABASE IF EXISTS xuan;
+CREATE DATABASE IF NOT EXISTS xuan
+	DEFAULT CHARACTER SET utf8
+	DEFAULT COLLATE utf8_bin;
+
 -- ----------------------------
 -- Table structure for T_TEST
 -- ----------------------------

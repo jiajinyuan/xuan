@@ -22,7 +22,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @Configuration
 @EnableSwagger2
-@Profile({"dev","local"})
+@Profile({"prod"})
 public class Swagger2 {
 
     @Bean
@@ -40,7 +40,7 @@ public class Swagger2 {
                 .title("Xuan api definition information")
                 .description("")
                 .termsOfServiceUrl("")
-                .contact(new Contact("JunFeng", "http://www.baidu.com", "xx@163.com"))
+                .contact(new Contact("Junfeng", "https://github.com/jiajinyuan", "jiajinyuan918@163.com"))
                 .version("1.0")
                 .build();
     }

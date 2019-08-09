@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true" scan="true">
+  <property name="LOG_HOME" value="logs"></property>
+
+  <!-- 控制台输出 -->
+  <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <!-- 输出格式 -->
+      <pattern>
+        [%p][%d][%t][%c:%L]%m%n
+      </pattern>
+    </encoder>
+    <!-- 控制台日志输出级别 -->
+    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+      <level>debug</level>
+    </filter>
+  </appender>
+
+  <!-- 运行日志文件输出 -->
+  <appender name="runFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <!--日志文件输出的文件名 -->
+      <FileNamePattern>${LOG_HOME}/run/sdc_executor_%d{yyyyMMdd}_%i.log</FileNamePattern>
+      <!-- 自动删除多少天前的日志文件 -->
+      <MaxHistory>30</MaxHistory>
+      <!--日志文件最大的大小 -->
+      <TimeBasedFileNamingAndTriggeringPolicy
+        class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+        <MaxFileSize>100MB</MaxFileSize>
+      </TimeBasedFileNamingAndTriggeringPolicy>
+    </rollingPolicy>
+    <!-- 日志文件输出格式 -->
+    <layout class="ch.qos.logback.classic.PatternLayout">
+      <pattern>
+        [%p][%d][%t][%c:%L]%m%n
+      </pattern>
+    </layout>
+    <!-- 运行日志输出级别 -->
+    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+      <level>info</level>
+    </filter>
+  </appender>
+
+  <!-- debug日志文件输出 -->
+  <appender name="debugFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <!--日志文件输出的文件名 -->
+      <FileNamePattern>${LOG_HOME}/debug/sdc_executor_%d{yyyyMMdd}_%i.log</FileNamePattern>
+      <!-- 自动删除多少天前的日志文件 -->
+      <MaxHistory>30</MaxHistory>
+      <!--日志文件最大的大小 -->
+      <TimeBasedFileNamingAndTriggeringPolicy
+        class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+        <MaxFileSize>100MB</MaxFileSize>
+      </TimeBasedFileNamingAndTriggeringPolicy>
+    </rollingPolicy>
+    <!-- 日志文件输出格式 -->
+    <layout class="ch.qos.logback.classic.PatternLayout">
+      <pattern>
+        [%p][%d][%t][%c:%L]%m%n
+      </pattern>
+    </layout>
+    <!-- debug日志输出级别 -->
+    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+      <level>debug</level>
+    </filter>
+  </appender>
+
+  <!-- 设置下列包中的日志级别为error，减少日志输出 -->
+  <!--<logger name="org.apache.zookeeper" level="error"></logger> -->
+  <!--<logger name="org.apache.hadoop.hbase.zookeeper" level="error"></logger> -->
+  <!--<logger name="org.apache.hadoop.hbase.client" level="error"></logger> -->
+
+  <!-- 基础日志级别和输出方式 -->
+  <root level="debug">
+    <appender-ref ref="console"/>
+    <!-- <appender-ref ref="runFile" />
+    <appender-ref ref="debugFile" /> -->
+  </root>
+</configuration>

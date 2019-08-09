@@ -1,15 +1,11 @@
-package com.jf.xuan.api.common;
+package com.jf.xuan.common.model.common;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * <p>Description: 分页此参数 .</p>
- * <p>Copyright: Copyright(c) 2020.</p>
- * <p>Company: Sefonsoft.</p>
- * <p>CreateTime: 2018/12/3.</p>
- *
+ * 分页此参数
  * @author Junfeng
  */
 @Data

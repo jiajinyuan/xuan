@@ -4,20 +4,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.scheduling.annotation.EnableAsync;
 import tk.mybatis.spring.annotation.MapperScan;
 
 /**
- * <p>Description: Application .</p>
- * <p>Copyright: Copyright(c) 2020.</p>
- * <p>Company: Sefonsoft.</p>
- * <p>CreateTime: 2018/12/3.</p>
+ * XuanApplication
  *
  * @author Junfeng
  */
-@SpringBootApplication
+@EnableAsync
 @MapperScan("com.jf.xuan.api")
-@EnableCaching
+@SpringBootApplication
 public class XuanApplication {
 
     private static final Logger LOG = LoggerFactory.getLogger(XuanApplication.class);

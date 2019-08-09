@@ -9,10 +9,7 @@ import org.springframework.context.i18n.LocaleContextHolder;
 import java.util.Locale;
 
 /**
- * <p>Description: I18nUtils .</p>
- * <p>Copyright: Copyright(c) 2020.</p>
- * <p>Company: Sefonsoft.</p>
- * <p>CreateTime: 2018/12/3.</p>
+ * I18nUtils
  *
  * @author Junfeng
  */

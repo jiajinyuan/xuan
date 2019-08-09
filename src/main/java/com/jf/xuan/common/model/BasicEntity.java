@@ -1,14 +1,10 @@
-package com.jf.xuan.api.model;
+package com.jf.xuan.common.model;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
-
-import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.NONE;
 
 /**
  * <p>Description: BasicEntity .</p>
@@ -19,13 +15,11 @@ import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.NONE;
  * @author Junfeng
  */
 @Data
-@JsonAutoDetect(creatorVisibility = NONE, fieldVisibility = NONE, getterVisibility = NONE, setterVisibility = NONE, isGetterVisibility = NONE)
 public class BasicEntity {
     @Id
     @Column(name = "ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonProperty("id")
-    private Long id;
+    private Integer id;
     /**
      * 当前第几页
      */
@@ -41,14 +35,12 @@ public class BasicEntity {
      * 创建时间
      */
     @Column(name = "CREATE_DATE")
-    @JsonProperty("createDate")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createDate;
     /**
      * 更新时间
      */
     @Column(name = "UPDATE_DATE")
-    @JsonProperty("updateDate")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date updateDate;
 

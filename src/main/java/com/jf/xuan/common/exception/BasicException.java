@@ -1,39 +1,48 @@
-package com.jf.xuan.api.exception;
+package com.jf.xuan.common.exception;
 
 import com.jf.xuan.common.util.I18nUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * <p>Description: BasicException .</p>
- * <p>Copyright: Copyright(c) 2020.</p>
- * <p>Company: Sefonsoft.</p>
- * <p>CreateTime: 2018/12/3.</p>
+ * BasicException
+ *
  * @author Junfeng
  */
 public class BasicException extends Exception {
+
     private static final Logger log = LoggerFactory.getLogger(BasicException.class);
+    /**
+     * 异常信息国际化KEY
+     */
+    protected String key;
 
 
-    private String key;
-    private String msg;
-
+    public BasicException(String key, Object... args) {
+        super(getMessage(key, args));
+        this.key = key;
+    }
 
     public BasicException(String key, Throwable cause, Object... args) {
-        super("BasicException", cause);
-        this.msg = getMessage(key, args);
+        super(getMessage(key, args), cause);
         this.key = key;
     }
 
 
+    /**
+     * 根据国际化KEY获取具体消息
+     *
+     * @param propKey 国际化KEY
+     * @param args    参数变量
+     * @return String
+     */
     private static String getMessage(String propKey, Object... args) {
-        String errorMessage = "";
         try {
             return I18nUtils.getMessage(propKey, args);
         } catch (Exception ex) {
             log.error("Error occurred: i18n get " + propKey + " failure!", ex);
+            return "";
         }
-        return errorMessage;
     }
 
     public String getKey() {
@@ -42,13 +51,5 @@ public class BasicException extends Exception {
 
     public void setKey(String key) {
         this.key = key;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
     }
 }
