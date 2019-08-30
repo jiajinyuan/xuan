@@ -1,9 +1,3 @@
-# Xuan
-[![CircleCI](https://circleci.com/gh/alibaba/spring-cloud-alibaba/tree/master.svg?style=svg)](https://circleci.com/gh/alibaba/spring-cloud-alibaba/tree/master)
-[![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
-
-
-
 <h1 align="center"><a href="https://github.com/jiajinyuan/xuan" target="_blank">Xuan</a></h1>
 <p align="center">  
   <a href="https://github.com/jiajinyuan"><img alt="author" src="https://img.shields.io/badge/author-Junfeng-orange.svg"/></a>
