@@ -17,7 +17,7 @@ Simple springboot framework
 
 # build 
 ```
-mvn compile 
+mvn clean package -Dmaven.test.skip
 ```
 # package
 ```
