@@ -13,14 +13,14 @@ public class ExceptionMsgUtils {
     /**
      * 将异常信息printStackTrace输出到字符串
      *
-     * @param ex 异常
-     * @return 异常字符串
+     * @param throwable 异常
+     * @return String
      */
-    public static String get(Exception ex) {
+    public static String getStackTrace(Throwable throwable) {
         StringWriter sw = new StringWriter();
-        PrintWriter pw = new PrintWriter(sw);
-        ex.printStackTrace(pw);
-        return sw.toString();
+        try (PrintWriter pw = new PrintWriter(sw)) {
+            throwable.printStackTrace(pw);
+            return sw.toString();
+        }
     }
-
 }
