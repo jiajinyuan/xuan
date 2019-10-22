@@ -7,7 +7,7 @@
     <encoder>
       <!-- 输出格式 -->
       <pattern>
-        %d | %5level | %t | %50c{50}:%-4L | %m%n
+        %d | %5level | %50c{50}:%-4L | %t | %m%n
       </pattern>
     </encoder>
     <!-- 控制台日志输出级别 -->
@@ -32,7 +32,7 @@
     <!-- 日志文件输出格式 -->
     <layout class="ch.qos.logback.classic.PatternLayout">
       <pattern>
-        %d | %5level | %t | %50c{50}:%-4L | %m%n
+        %d | %5level | %50c{50}:%-4L | %t | %m%n
       </pattern>
     </layout>
     <!-- 运行日志输出级别 -->
@@ -57,7 +57,7 @@
     <!-- 日志文件输出格式 -->
     <layout class="ch.qos.logback.classic.PatternLayout">
       <pattern>
-        %d | %5level | %t | %50c{50}:%-4L | %m%n
+        %d | %5level | %50c{50}:%-4L | %t | %m%n
       </pattern>
     </layout>
     <!-- debug日志输出级别 -->
