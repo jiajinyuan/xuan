@@ -7,7 +7,7 @@
     <encoder>
       <!-- 输出格式 -->
       <pattern>
-        %d | %5level | %50c{50}:%-4L | %t | %m%n
+        %d | %green(%5level) | %blue(%50c{50}:%-4L) | %cyan(%t) | %m%n
       </pattern>
     </encoder>
     <!-- 控制台日志输出级别 -->
