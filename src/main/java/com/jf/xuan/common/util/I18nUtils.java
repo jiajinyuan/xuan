@@ -15,7 +15,10 @@ import java.util.Locale;
  */
 public abstract class I18nUtils {
 
-    private static MessageSource ms;
+    /**
+     * MessageSource
+     */
+    private static MessageSource MS;
 
     public static String getMessage(String code) {
         return getMessage(code, "", null);
@@ -30,7 +33,7 @@ public abstract class I18nUtils {
     }
 
     public static String getMessage(String code, String defaultMessage, Object[] args) {
-        return ms.getMessage(code, args, defaultMessage, getLocale());
+        return MS.getMessage(code, args, defaultMessage, getLocale());
     }
 
     public static Locale getLocale() {
@@ -54,7 +57,7 @@ public abstract class I18nUtils {
          */
         @Override
         public void setBeanFactory(BeanFactory beanFactory) {
-            ms = beanFactory.getBean("messageSource", MessageSource.class);
+            MS = beanFactory.getBean("messageSource", MessageSource.class);
         }
     }
 }

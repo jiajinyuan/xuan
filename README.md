@@ -30,3 +30,10 @@ mvn clean package -Dmaven.test.skip
 # 停止
 ./run.sh stop
 ```
+
+# findbugs 和 CheckStyle
+```
+mvn findbugs:findbugs
+mvn checkstyle:checkstyle
+mvn site
+```
