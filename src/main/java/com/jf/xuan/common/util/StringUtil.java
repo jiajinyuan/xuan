@@ -21,7 +21,7 @@ public class StringUtil {
      *
      * @param src        字符串
      * @param byteLength 安字节算, 中文算两个字节
-     * @param tail       tail
+     * @param tail       跟在后面的字符串
      * @return 处理后的字符串
      */
     public static String ellipsis(String src, int byteLength, String tail) {
@@ -174,10 +174,25 @@ public class StringUtil {
         return sb;
     }
 
+    /**
+     * 验证字符串是否已后缀结束
+     *
+     * @param str    验证的字符串
+     * @param suffix 后缀
+     * @return 是否匹配
+     */
     public static boolean endsWith(String str, String suffix) {
         return endsWith(str, suffix, false);
     }
 
+    /**
+     * 验证字符串是否已后缀结束
+     *
+     * @param str        验证的字符串
+     * @param suffix     后缀
+     * @param ignoreCase 忽略大小写
+     * @return 是否匹配
+     */
     private static boolean endsWith(String str, String suffix, boolean ignoreCase) {
         if (str == null || suffix == null) {
             return (str == null && suffix == null);
@@ -189,10 +204,25 @@ public class StringUtil {
         return str.regionMatches(ignoreCase, strOffset, suffix, 0, suffix.length());
     }
 
+    /**
+     * 验证字符串是否已前缀开始
+     *
+     * @param str    验证的字符串
+     * @param prefix 前缀
+     * @return 是否匹配
+     */
     public static boolean startsWith(String str, String prefix) {
         return startsWith(str, prefix, false);
     }
 
+    /**
+     * 验证字符串是否已前缀开始
+     *
+     * @param str        验证的字符串
+     * @param prefix     前缀
+     * @param ignoreCase 忽略大小写
+     * @return 是否匹配
+     */
     private static boolean startsWith(String str, String prefix, boolean ignoreCase) {
         if (str == null || prefix == null) {
             return (str == null && prefix == null);
