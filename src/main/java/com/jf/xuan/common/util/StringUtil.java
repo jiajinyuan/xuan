@@ -1,5 +1,6 @@
 package com.jf.xuan.common.util;
 
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static org.springframework.util.StringUtils.isEmpty;
@@ -15,6 +16,10 @@ public class StringUtil {
      * 验证是否是double
      */
     public static final Pattern IS_DOUBLE = Pattern.compile("^[-\\+]?[.\\d]*$");
+    /**
+     * 制表符、换行符、回车符匹配
+     */
+    public static final Pattern P_TRN = Pattern.compile("\\s*|\t|\r|\n");
 
     /**
      * 取指定长度的前面字符串
@@ -64,6 +69,20 @@ public class StringUtil {
         return returnSrc;
     }
 
+    /**
+     * 替换制表符、换行符、回车符
+     *
+     * @param str 待处理字符串
+     * @return 出来后字符串
+     */
+    public static String replaceBlank(String str) {
+        String dest = "";
+        if (str != null) {
+            Matcher m = P_TRN.matcher(str);
+            dest = m.replaceAll("");
+        }
+        return dest;
+    }
 
     /**
      * 格式化路径
