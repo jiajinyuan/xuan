@@ -6,9 +6,9 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * Description: 时间工具类
+ * 时间工具类
  *
- * @author SF2121
+ * @author Junfeng
  */
 public class DateUtils {
     /**

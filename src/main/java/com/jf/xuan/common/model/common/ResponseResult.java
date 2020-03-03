@@ -7,10 +7,7 @@ import lombok.*;
 import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.NONE;
 
 /**
- * <p>Description: 结果集对象 .</p>
- * <p>Copyright: Copyright(c) 2020.</p>
- * <p>Company: Sefonsoft.</p>
- * <p>CreateTime: 2018/12/3.</p>
+ * 结果集对象
  *
  * @author Junfeng
  */

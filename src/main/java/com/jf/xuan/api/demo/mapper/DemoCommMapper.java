@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 
 /**
  * @author Junfeng
- * @version 1.0
  */
 @Repository
 public interface DemoCommMapper extends BasicMapper<DemoCommEntity> {
