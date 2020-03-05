@@ -21,14 +21,14 @@ public class EncryptPasswordUtil {
 
     @Test
     public void encryptPwd() {
-        String result = stringEncryptor.encrypt("cdsf119!");
+        String result = stringEncryptor.encrypt("cdsf119");
         System.out.println("====================================================");
         System.out.println("Ciphertext: " + result);
         System.out.println("====================================================");
     }
     @Test
     public void decryptPwd(){
-        String result = stringEncryptor.decrypt("MO4SEDRla5BCKlRjMf9/Cg==");
+        String result = stringEncryptor.decrypt("LIZqZP7itPTJuNirbBs4OgJZemgMPFgpc9aeJ0blvbxd7IrOcbBYw8/3dHewwqh7");
         System.out.println("====================================================");
         System.out.println("Ciphertext: " + result);
         System.out.println("====================================================");

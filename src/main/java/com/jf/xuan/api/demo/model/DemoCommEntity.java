@@ -2,6 +2,7 @@ package com.jf.xuan.api.demo.model;
 
 import com.jf.xuan.common.model.BasicEntity;
 import lombok.*;
+import lombok.experimental.Accessors;
 
 import javax.persistence.Column;
 import javax.persistence.Table;
@@ -11,10 +12,8 @@ import javax.persistence.Table;
  * @version 1.0
  */
 @Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
+@Accessors(chain = true)
 @Table(name = "T_TEST")
 public class DemoCommEntity extends BasicEntity {
 
