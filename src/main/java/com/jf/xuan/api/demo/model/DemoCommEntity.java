@@ -9,7 +9,6 @@ import javax.persistence.Table;
 
 /**
  * @author Junfeng
- * @version 1.0
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

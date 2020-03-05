@@ -16,7 +16,7 @@ import java.util.Base64;
 /**
  * 加解密工具类
  *
- * @author SF2121
+ * @author Junfeng
  */
 @SuppressWarnings("restriction")
 public class AES128Encrypt {

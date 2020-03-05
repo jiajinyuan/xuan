@@ -8,10 +8,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * <p>Description: 分页结果 .</p>
- * <p>Copyright: Copyright(c) 2020.</p>
- * <p>Company: Sefonsoft.</p>
- * <p>CreateTime: 2018/12/3.</p>
+ * 分页结果
  *
  * @author Junfeng
  */

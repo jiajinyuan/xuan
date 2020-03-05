@@ -7,10 +7,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 /**
- * <p>Description: BasicEntity .</p>
- * <p>Copyright: Copyright(c) 2020.</p>
- * <p>Company: Sefonsoft.</p>
- * <p>CreateTime: 2018/12/3.</p>
+ * BasicEntity
  *
  * @author Junfeng
  */

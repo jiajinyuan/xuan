@@ -9,7 +9,7 @@ import java.util.Map;
 /**
  * JSON 工具类
  *
- * @author SF2121
+ * @author Junfeng
  */
 public class JsonUtil {
 
@@ -22,7 +22,8 @@ public class JsonUtil {
     public static Map<String, Object> objToMap(Object obj) {
         String jsonString = JSON.toJSONString(obj, SerializerFeature.WriteNullStringAsEmpty,
                 SerializerFeature.WriteNullListAsEmpty, SerializerFeature.WriteMapNullValue);
-        return JSON.parseObject(jsonString, new TypeReference<Map<String, Object>>() {}.getType());
+        return JSON.parseObject(jsonString, new TypeReference<Map<String, Object>>() {
+        }.getType());
     }
 
 }
