@@ -1,11 +1,11 @@
 package com.jf.xuan.api.demo.model;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.jf.xuan.common.model.BasicEntity;
 import lombok.*;
 import lombok.experimental.Accessors;
 
-import javax.persistence.Column;
-import javax.persistence.Table;
 
 /**
  * @author Junfeng
@@ -13,13 +13,13 @@ import javax.persistence.Table;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Accessors(chain = true)
-@Table(name = "T_TEST")
+@TableName(value = "T_TEST")
 public class DemoCommEntity extends BasicEntity {
 
     /**
      * 库名
      */
-    @Column(name = "NAME")
+    @TableField(value = "NAME")
     private String name;
 
 }

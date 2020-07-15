@@ -26,30 +26,30 @@ public class DemoCommonServiceImpl implements DemoCommonService {
     @Override
     public ResponseResult getCommonAll(DemoCommEntity entity) {
         Page<Object> page = PageHelper.startPage(entity.getPage(), entity.getLimit());
-        List<DemoCommEntity> data = mapper.selectAll();
+        List<DemoCommEntity> data = mapper.selectList(null);
         return new ResponseResult(new PageResult<>(data, page.getTotal(), entity.getLimit()));
     }
 
     @Override
     public ResponseResult get(Long id) {
-        return new ResponseResult(mapper.selectByPrimaryKey(id));
+        return new ResponseResult(mapper.selectById(id));
     }
 
     @Override
     public ResponseResult add(DemoCommEntity entity) {
-        int i = mapper.insertSelective(entity);
+        int i = mapper.insert(entity);
         return new ResponseResult(ResponseResult.TRUE, "", i);
     }
 
     @Override
     public ResponseResult update(DemoCommEntity entity) {
-        int i = mapper.updateByPrimaryKeySelective(entity);
+        int i = mapper.updateById(entity);
         return new ResponseResult(ResponseResult.TRUE, "", i);
     }
 
     @Override
     public ResponseResult delete(Long id) {
-        int i = mapper.deleteByPrimaryKey(id);
+        int i = mapper.deleteById(id);
         return new ResponseResult(ResponseResult.TRUE, "", i);
     }
 }
