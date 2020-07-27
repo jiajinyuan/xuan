@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * BasicEntity
@@ -17,29 +17,36 @@ import java.util.Date;
 public class BasicEntity {
 
     @TableId(value = "ID", type = IdType.AUTO)
-    private Integer id;
+    protected Long id;
     /**
      * 当前第几页
      */
     @TableField(exist = false)
-    private Integer page = 1;
+    protected Integer page = 1;
 
     /**
      * 每页大小
      */
     @TableField(exist = false)
-    private Integer limit = 10;
+    protected Integer limit = 10;
+
+    /**
+     * 每页大小
+     */
+    @TableField(exist = false)
+    protected String searchKey;
+
     /**
      * 创建时间
      */
-    @TableField(value = "CREATE_DATE")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date createDate;
+    @TableField("CREATE_DATE")
+    protected LocalDateTime createDate;
     /**
      * 更新时间
      */
-    @TableField(value = "UPDATE_DATE")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date updateDate;
+    @TableField("UPDATE_DATE")
+    protected LocalDateTime updateDate;
 
 }

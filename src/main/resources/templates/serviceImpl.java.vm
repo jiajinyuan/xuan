@@ -1,0 +1,86 @@
+package ${package.ServiceImpl};
+
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import ${superServiceImplClassPackage};
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import ${package.Entity}.${entity};
+import ${package.Mapper}.${table.mapperName};
+import ${package.Service}.${table.serviceName};
+import com.jf.xuan.common.model.common.PageResult;
+import com.jf.xuan.common.model.common.ResponseResult;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+/**
+ * $!{table.comment} 服务实现类
+ *
+ * @author ${author}
+ * @since ${date}
+ */
+@Slf4j
+@Service(${table.serviceName}.SERVICE_ID)
+#if(${kotlin})
+open class ${table.serviceImplName} : ${superServiceImplClass}<${table.mapperName}, ${entity}>(), ${table.serviceName} {
+
+}
+#else
+public class ${table.serviceImplName} extends ${superServiceImplClass}<${table.mapperName}, ${entity}> implements ${table.serviceName} {
+
+    @Override
+    public ResponseResult list(${entity} entity)throws Exception{
+        String keyword = entity.getSearchKey();
+        QueryWrapper<${entity}> queryWrapper = new QueryWrapper<>();
+        if (!StringUtils.isEmpty(keyword)) {
+            queryWrapper.like("", keyword);
+        }
+        List<${entity}> data = baseMapper.selectList(queryWrapper);
+        return new ResponseResult(data);
+    }
+
+    @Override
+    public ResponseResult page(${entity} entity)throws Exception{
+        Page<Object> page = PageHelper.startPage(entity.getPage(), entity.getLimit());
+        String keyword = entity.getSearchKey();
+        QueryWrapper<${entity}> queryWrapper = new QueryWrapper<>();
+        if (!StringUtils.isEmpty(keyword)) {
+            queryWrapper.like("", keyword);
+        }
+        List<${entity}> data = baseMapper.selectList(queryWrapper);
+        return new ResponseResult(new PageResult<>(data, page.getTotal(), entity.getLimit()));
+##        String keyword = entity.getSearchKey();
+##        IPage<${entity}> page = new Page<>(entity.getPage(), entity.getLimit());
+##        QueryWrapper<${entity}> queryWrapper = new QueryWrapper<>();
+##        if (!StringUtils.isEmpty(keyword)) {
+##            queryWrapper.like("", keyword);
+##        }
+##        return new ResponseResult(baseMapper.selectPage(page, queryWrapper));
+    }
+
+    @Override
+    public ResponseResult add(${entity} entity)throws Exception{
+        int i = baseMapper.insert(entity);
+        return new ResponseResult(ResponseResult.TRUE, "", i);
+    }
+
+    @Override
+    public ResponseResult modify(${entity} entity)throws Exception{
+        int i = baseMapper.updateById(entity);
+        return new ResponseResult(ResponseResult.TRUE, "", i);
+    }
+
+    @Override
+    public ResponseResult delete(Long id)throws Exception{
+        int i = baseMapper.deleteById(id);
+        return new ResponseResult(ResponseResult.TRUE, "", i);
+    }
+
+    @Override
+    public ResponseResult get(Long id)throws Exception{
+        return new ResponseResult(baseMapper.selectById(id));
+    }
+}
+#end
