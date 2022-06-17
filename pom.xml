@@ -30,7 +30,7 @@
         <mybatis-spring-boot-starter.version>2.1.1</mybatis-spring-boot-starter.version>
         <mybatisplus.version>3.4.1</mybatisplus.version>
 
-        <fastjson.version>1.2.68</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
         <swagger.version>3.0.0</swagger.version>
         <httpmime.version>4.5.13</httpmime.version>
         <commons-lang3.version>3.11</commons-lang3.version>
